@@ -1,0 +1,101 @@
+/* Đặt font và bỏ khoảng trắng mặc định */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container căn giữa */
+.container {
+    width: 100%; /* Đặt chiều rộng 100% để căn giữa */
+    max-width: 1200px; /* Giới hạn chiều rộng tối đa */
+    margin: 0 auto; /* Căn giữa container */
+}
+
+/* Header và màu sắc */
+header {
+    background-color: #a31414; /* Màu nền đỏ */
+    color: white;
+}
+
+/* Phần thông tin liên hệ trên cùng */
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    background-color: #d88a1a; /* Màu nền vàng */
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.header-top .contact span {
+    margin-right: 15px;
+}
+
+.store-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: right;
+}
+
+/* Phần đăng nhập */
+.store-info .login {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.store-info .login:hover {
+    color: #ffd700; /* Màu vàng khi hover */
+}
+
+/* Logo và menu điều hướng */
+.logo-nav {
+    display: flex;
+    justify-content: center; /* Căn giữa logo và menu */
+    align-items: center;
+    padding: 20px 0;
+    gap: 50px; /* Khoảng cách giữa logo và menu */
+}
+
+.logo {
+    max-width: 200px;
+}
+
+.logo img {
+    max-width: 100%; /* Đảm bảo logo không vượt quá khung */
+    height: auto;
+    max-height: 100px;
+}
+
+/* Navigation menu */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Khoảng cách giữa các mục menu */
+}
+
+nav ul li {
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+    color: #ffd700; /* Màu vàng khi chọn hoặc hover */
+    border-bottom: 3px solid #ffd700;
+}
+
+nav ul li a:hover {
+    text-decoration: none;
+}
