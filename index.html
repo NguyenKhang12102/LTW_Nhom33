@@ -8,95 +8,83 @@
 
     </head>
     <style>
-        body{
-            box-sizing: border-box;
-            display: block;
-            color: #333;
-            font-family: 'Open Sans', sans-serif;
-            overflow-x: hidden;
-            text-align: left;
-            font-size: 14px;
-          
+        body {
+    box-sizing: border-box;
+    color: #333;
+    font-family: 'Open Sans', sans-serif;
+    overflow-x: hidden;
+    text-align: left;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
 
-        }
-        div{
-            display: block;
-            unicode-bidi: isolate;
-<<<<<<< HEAD
+/* Center container */
+.container {
+    max-width: 1200px; /* Set a max-width to limit content width */
+    margin: 0 auto; /* This centers the container horizontally */
+    padding: 0 20px; /* Add some padding for smaller screens */
+}
 
-        }
-        .gd_breadcrumb{
-            background:#f5f5f5;
-            clear: both;
-        }
-        .breadcrumb{
-            font-size: 16px;
-            color: gray;
+/* Page content formatting */
+.page-content {
+    width: 100%;
+    text-align: justify;
+    line-height: 1.8;
+    font-size: 16px;
+}
 
-=======
->>>>>>> da40260aedfed4239792aa8b8e5e0a10031a86d0
-        }
-        .page-content{
-            width: 100%;
-            float: left;
-           text-align: justify;
-           line-height: 1.8;
-           font-size: 16px;
-<<<<<<< HEAD
+/* Breadcrumb formatting */
+.gd_breadcrumb {
+    background: #f5f5f5;
+    clear: both;
+}
 
-=======
->>>>>>> da40260aedfed4239792aa8b8e5e0a10031a86d0
-           
-  
-        }
-        .container{
-            width: 100%;
-<<<<<<< HEAD
-=======
-            
->>>>>>> da40260aedfed4239792aa8b8e5e0a10031a86d0
-            padding-left: 20px;
-            padding-right: 20px;
-            margin-left: auto;
-            margin-right: auto;
-            max-width: none;
-        
-        }
-        .h1{
-        
-            text-align: justify;
-            
-        }
-        .picture{
-            display: block;
-            height: 163px;
-            max-width: 400px;
-            margin: 5px auto 5px auto;
-        }
-        .contact{
-            display: flex;
-            flex-flow: column;
-            margin-bottom: 20px;
-        }
-        .contact .product_contact{
-            order: 6;
-            padding: 15px;
-            border: 1px solid #e5e5e5 ;
-        }
-  
+.breadcrumb {
+    font-size: 16px;
+    color: gray;
+}
 
-      .product_contact strong {
-      font-size: 18px;
-      margin-bottom: 10px;
-      display: block;
-    }
+/* Heading and image */
+.h1 {
+    text-align: justify;
+}
 
-    .product_contact .hotline, .product_contact .email, .product_contact .address {
-       margin-top: 8px;
-       display: block;
-      }
+.picture {
+    display: block;
+    height: 163px;
+    max-width: 400px;
+    margin: 5px auto; /* Center the image */
+}
 
-     .product_contact i {
+/* Contact section styling */
+.contact {
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 20px;
+
+}
+
+.product_contact {
+    padding: 15px;
+    border: 1px solid #e5e5e5;
+    margin: 0px 155px ; /* Center the contact box */
+}
+
+.product_contact strong {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.product_contact .hotline,
+.product_contact .email,
+.product_contact .address {
+    margin-top: 8px;
+    display: block;
+}
+
+.product_contact i {
     margin-right: 8px;
     color: #333;
 }
@@ -127,10 +115,14 @@
 .product_contact div i {
     font-size: 1.2em;
 }
+.thanks{
+    margin: 0 155px;
+
+}
+
 
 </style>
 <body>
-<<<<<<< HEAD
     <div class="gd_breadcrumb">
         <div class="container">
             <nav class="breadcrumb">
@@ -142,8 +134,6 @@
             </nav>
         </div>
     </div>
-=======
->>>>>>> da40260aedfed4239792aa8b8e5e0a10031a86d0
     <div class="page-content">
         <div class="container">
 
@@ -201,12 +191,9 @@
                     </span>
                 </div>
             </div>
-
-            <p style="text-align: justify;">Xin trân trọng cảm ơn!</p>
-<<<<<<< HEAD
-          
-=======
->>>>>>> da40260aedfed4239792aa8b8e5e0a10031a86d0
+            <div class="thanks">
+            <p>Xin trân trọng cảm ơn!</p>
+          </div>
         </div>
          
     </div>
