@@ -64,17 +64,18 @@ img.avatar {
 
 
 .container {
+  border-radius: 10px;
   padding: 16px; /* Khoảng cách giữa nội dung và viền của vùng chứa là 16px */
 }
 
-/* Styling for password hint link */
+
 /* Kiểu cho liên kết "Forgot password?" */
 span.psw {
   float: right; /* Canh phải cho phần tử này */
   padding-top: 16px; /* Khoảng cách trên là 16px */
 }
 
-/* The Modal (background) */
+
 /* Kiểu cho hộp thoại (nền) */
 .modal {
   display: none; /* Ẩn mặc định */
@@ -99,12 +100,42 @@ span.psw {
   margin: 5% auto; /* Căn giữa với 5% khoảng cách từ trên */
   border: 1px solid #888;
   width: 500px; /* Chiều rộng cố định 300px */
-  height: 500px; /* Chiều cao cố định 300px để tạo hình vuông */
+  height: 615px; /* Chiều cao cố định 300px để tạo hình vuông */
   box-sizing: border-box; /* Đảm bảo padding và border được tính vào tổng kích thước */
   border-radius: 15px;
+  
 }
 
-/* The Close Button (x) */
+.another {
+    display: flex;  
+    margin: 20px 0; /* Khoảng cách cho phần này */
+}
+
+.google-login-button {
+  width: 300px;
+    background-color: #04AA6D; /* Màu nền của nút */
+    color: white; /* Màu chữ */
+    border: none; /* Loại bỏ viền */
+    padding: 10px 15px; /* Khoảng cách bên trong nút */
+    border-radius: 5px; /* Bo góc cho nút */
+    display: flex; /* Sử dụng flexbox để căn giữa nội dung */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    cursor: pointer; /* Hiển thị con trỏ khi di chuột qua nút */
+    margin-left: 10px; /* Khoảng cách giữa văn bản và nút */
+    font-size: 16px; /* Kích thước chữ */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển đổi màu nền */
+}
+
+.google-login-button:hover {
+  opacity: 0.8;
+}
+
+.google-login-button i {
+    margin-right: 5px; /* Khoảng cách giữa biểu tượng và văn bản */
+}
+
+
+
 /* Kiểu cho nút đóng (x) */
 .close {
   position: absolute; /* Đặt vị trí tuyệt đối */
@@ -158,7 +189,7 @@ span.psw {
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Đăng nhập</button>
 
 <div id="id01" class="modal">
-  
+
   <form class="modal-content animate" action="/action_page.php" method="post">
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -178,9 +209,18 @@ span.psw {
       <label>
         <input type="checkbox" checked="checked" name="remember"> Nhớ cho lần đăng nhập sau
       </label>
+      <div class="another">
+        <p><i class="fa-regular fa-hand-point-right"></i> Hoặc có thể:</p>
+        <button class="google-login-button">
+            <i class="fa-brands fa-google"></i> Đăng nhập với Google
+        </button>
     </div>
+    
+    </div>
+    
 
-    <div class="container" style="background-color:#f1f1f1">
+
+    <div class="container" style="background-color:white" >
       <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Hủy đăng nhập</button>
       <span class="psw">Quên <a href="#">mật khẩu?</a></span>
     </div>
