@@ -2,63 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title> Liên Hệ</title>
-</head>
-<style>
-    body{
-        text-align: center ;
-    }
-h1{
-    font-size: 35px;
-    font-family: 'Roboto', sans-serif;
-    color: #94211c;
-    text-transform: uppercase;
+    <title>Liên Hệ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        html, body {
+            color: #333;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        i {
+            font-size: 50px;
+        }
+        h1 {
+            font-size: 35px;
+            font-family: 'Roboto', sans-serif;
+            color: #94211c;
+            text-transform: uppercase;
+            margin: 20px 0;
+        }
 
-}
-h2{
-    display: block;
-    text-align: center;
-    margin: auto;
-    width: 50%;
-}
-    .gd_list_add {
-        clear: both;
-        margin-top: 30px;
-    }
-   
-</style>
+        h2 {
+            font-size: 16px;
+            margin: 20px auto;
+            width: 60%;
+            line-height: 1.5;
+        }
+
+
+
+        .gd_add_item {
+            flex: 1;
+            margin: 0 10px;
+            padding: 0 10px;
+            -webkit-box-shadow: inset 7px 14px 30px -13px rgba(0,0,0,0.75);
+            -moz-box-shadow: inset 7px 14px 30px -13px rgba(0,0,0,0.75);
+            box-shadow: inset 7px 14px 30px -13px rgba(0,0,0,0.75);
+        }
+
+        .gd_add_title {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .gd_add_content {
+            font-size: 16px;
+            margin-top: 5px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin-top: 30px;
+        }
+
+
+
+
+
+
+    </style>
+</head>
 <body>
-<h1>
-    Liên Hệ Với Chúng Tôi
-</h1>
-<h2> Nếu bạn có nhu cầu mua sản phẩm hoặc làm cộng tác viên, đại lý hoặc cần tư vấn về</br>
-    sản phẩm hãy liên hệ ngay với chúng tôi theo địa chỉ dưới đây hoặc để lại lời nhắn.</h2>
-<div class="gd_list_add">
-    <div class="row">
-        <div class="gd_add_item col-sm-4 col-12">
-            <div class="gd_add_inner">
-                <h4 class="gd_add_title">
-                    Phone number                            </h4>
-                <div class="gd_add_content">
-                    0000000000                            </div>
-            </div>
-        </div>
-        <div class="gd_add_item col-sm-4 col-12">
-            <div class="gd_add_inner">
-                <h4 class="gd_add_title">
-                    Address                            </h4>
-                <div class="gd_add_content">
-                    Trường Đại Học Nông Lâm TP HCM                           </div>
-            </div>
-        </div>
-        <div class="gd_add_item col-sm-4 col-12">
-            <div class="gd_add_inner">
-                <h4 class="gd_add_title">
-                    Email address                            </h4>
-                <div class="gd_add_content">
-                    22130142@st.hcmuaf.edu.vn                            </div>
-            </div>
-        </div>
+<h1>Liên Hệ Với Chúng Tôi</h1>
+<h2>
+    Nếu bạn có nhu cầu mua sản phẩm, làm cộng tác viên, đại lý, hoặc cần tư vấn về sản phẩm, hãy liên hệ với chúng tôi theo địa chỉ dưới đây hoặc để lại lời nhắn.
+</h2>
+<div class="container">
+    <div class="gd_add_item">
+        <h4 class="gd_add_title">Phone number</h4>
+        <i class="fa-solid fa-phone-volume"></i>
+        <div class="gd_add_content">0000000000</div>
+    </div>
+    <div class="gd_add_item">
+        <h4 class="gd_add_title">Address</h4>
+        <i class="fa-solid fa-location-dot"></i>
+        <div class="gd_add_content">Trường Đại Học Nông Lâm TP HCM</div>
+    </div>
+    <div class="gd_add_item">
+        <h4 class="gd_add_title">Email address</h4>
+        <i class="fa-solid fa-envelope"></i>
+        <div class="gd_add_content">22130142@st.hcmuaf.edu.vn</div>
     </div>
 </div>
 </body>
