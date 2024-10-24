@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+  border-radius: 10px; /* Bo tròn góc input */
+}
+
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  border-radius: 10px; /* Bo tròn góc button */
+}
+
+button:hover {
+  opacity: 1;
+}
+
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+  border-radius: 10px; /* Bo tròn góc button cancel */
+}
+
+
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+.imgcontainer {
+  text-align: center; /* Canh giữa nội dung trong vùng chứa */
+  margin: 24px 0 12px 0; /* Khoảng cách bên ngoài: 24px trên, 12px dưới, không có khoảng cách trái/phải */
+  position: relative; /* Vị trí tương đối để có thể đặt nút đóng trong phạm vi của phần tử */
+}
+
+img.avatar {
+  width: 20%; /* Hình ảnh chiếm 20% chiều ngang của vùng chứa */
+  border-radius: 50%; /* Bo tròn các góc của hình ảnh, tạo thành hình tròn */
+}
+
+.caption {
+  margin-top: 10px; /* Khoảng cách giữa hình và dòng chữ */
+  font-size: 16px; /* Kích thước chữ */
+  color: #a96a19; /* Màu chữ */
+  font-weight: bold;
+
+}
+
+
+.container {
+  padding: 16px;
+}
+
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Add opacity */
+  padding-top: 50px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* Centered */
+  border: 1px solid #888;
+  width: 600px; /* Chiều rộng */
+  height: 800px; /* Chiều cao */
+  border-radius: 20px; /* Bo tròn góc khung đăng ký */
+  padding: 20px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1); /* Tạo bóng */
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+</style>
+<body>
+
+
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Đăng ký</button>
+
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <form class="modal-content" action="/action_page.php">
+    <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="https://github.com/NguyenKhang12102/LTW_Nhom33/blob/BaoKhang/asset/pic/img_xoaNen.png?raw=true" alt="" class="avatar">
+        <p class="caption">CỬA HÀNG ĐỒ MỸ NGHỆ</p> 
+      </div>
+    <div class="container">
+      <h1>Đăng ký</h1>
+      <p>Vui lòng điền vào mẫu này để tạo tài khoản.</p>
+      <hr>
+      <label for="username"><b>Tên đăng nhập</b></label>
+      <input type="text" placeholder="Nhập tên đăng nhập của bạn" name="name" required>
+
+      <label for="psw"><b>Mật khẩu</b></label>
+      <input type="password" placeholder="Tạo 1 mật khẩu" name="psw" required>
+
+      <label for="psw-repeat"><b>Xác nhận mật khẩu</b></label>
+      <input type="password" placeholder="Nhập lại mật khẩu" name="psw-repeat" required>
+      
+      <label>
+        <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Nhớ tôi cho lần sau
+      </label>
+
+      <p>Bạn có đồng ý với <a href="#" style="color:dodgerblue">Điều khoản và Quyền riêng tư</a> của chúng tôi.</p>
+
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Hủy đăng ký</button>
+        <button type="submit" class="signupbtn">Đăng ký</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
