@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Full-width input fields */ 
+/* Trường nhập liệu có chiều rộng toàn phần */
+input[type=text], input[type=password] {
+  width: 100%; /* Chiều rộng của các trường nhập liệu chiếm toàn bộ chiều ngang */
+  padding: 12px 20px; /* Khoảng cách giữa nội dung và viền: 12px trên/dưới và 20px trái/phải */
+  margin: 8px 0; /* Khoảng cách bên ngoài trên/dưới là 8px, trái/phải là 0 */
+  display: inline-block; /* Hiển thị dạng khối trong dòng */
+  border: 1px solid #ccc; /* Viền của trường nhập liệu có màu xám nhạt */
+  box-sizing: border-box; /* Tính toán chiều rộng và chiều cao bao gồm viền và padding */
+}
+
+/* Set a style for all buttons */
+/* Đặt kiểu cho tất cả các nút */
+button {
+  background-color: #04AA6D; /* Màu nền xanh lá */
+  color: white; /* Màu chữ trắng */
+  padding: 14px 20px; /* Khoảng cách giữa nội dung và viền: 14px trên/dưới và 20px trái/phải */
+  margin: 8px 0; /* Khoảng cách ngoài trên/dưới là 8px, trái/phải là 0 */
+  border: none; /* Không có viền */
+  cursor: pointer; /* Con trỏ chuột biến thành hình tay khi di chuột lên nút */
+  width: 100%; /* Nút chiếm toàn bộ chiều ngang của vùng chứa */
+}
+
+button:hover {
+  opacity: 0.8; /* Khi di chuột lên, nút trở nên hơi trong suốt (mờ đi 20%) */
+}
+
+/* Extra styles for the cancel button */
+/* Các kiểu bổ sung cho nút huỷ */
+.cancelbtn {
+  width: auto; /* Chiều rộng của nút huỷ được tự động điều chỉnh */
+  padding: 10px 18px; /* Khoảng cách giữa nội dung và viền: 10px trên/dưới và 18px trái/phải */
+  background-color: #f44336; /* Màu nền đỏ */
+}
+
+/* Center the image and position the close button */
+/* Canh giữa hình ảnh và đặt vị trí nút đóng */
+.imgcontainer {
+  text-align: center; /* Canh giữa nội dung trong vùng chứa */
+  margin: 24px 0 12px 0; /* Khoảng cách bên ngoài: 24px trên, 12px dưới, không có khoảng cách trái/phải */
+  position: relative; /* Vị trí tương đối để có thể đặt nút đóng trong phạm vi của phần tử */
+}
+
+img.avatar {
+  width: 40%; /* Hình ảnh chiếm 40% chiều ngang của vùng chứa */
+  border-radius: 50%; /* Bo tròn các góc của hình ảnh, tạo thành hình tròn */
+}
+
+/* Container for form elements */
+/* Vùng chứa cho các phần tử form */
+.container {
+  padding: 16px; /* Khoảng cách giữa nội dung và viền của vùng chứa là 16px */
+}
+
+/* Styling for password hint link */
+/* Kiểu cho liên kết "Forgot password?" */
+span.psw {
+  float: right; /* Canh phải cho phần tử này */
+  padding-top: 16px; /* Khoảng cách trên là 16px */
+}
+
+/* The Modal (background) */
+/* Kiểu cho hộp thoại (nền) */
+.modal {
+  display: none; /* Ẩn mặc định */
+  position: fixed; /* Cố định vị trí hộp thoại */
+  z-index: 1; /* Ưu tiên hiển thị cao, ở trên các phần tử khác */
+  left: 0; /* Căn trái */
+  top: 0; /* Căn trên */
+  width: 100%; /* Chiều rộng chiếm toàn bộ màn hình */
+  height: 100%; /* Chiều cao chiếm toàn bộ màn hình */
+  overflow: auto; /* Cho phép cuộn nếu nội dung vượt quá */
+  background-color: rgb(0,0,0); /* Màu nền đen */
+  background-color: rgba(0,0,0,0.4); /* Nền đen với độ mờ 40% */
+  padding-top: 60px; /* Khoảng cách trên của hộp thoại là 60px */
+}
+
+/* Modal Content/Box */
+/* Nội dung hộp thoại (khung) */
+/* Modal Content/Box */
+/* Nội dung hộp thoại (khung) */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* Căn giữa với 5% khoảng cách từ trên */
+  border: 1px solid #888;
+  width: 500px; /* Chiều rộng cố định 300px */
+  height: 400px; /* Chiều cao cố định 300px để tạo hình vuông */
+  box-sizing: border-box; /* Đảm bảo padding và border được tính vào tổng kích thước */
+}
+
+/* The Close Button (x) */
+/* Kiểu cho nút đóng (x) */
+.close {
+  position: absolute; /* Đặt vị trí tuyệt đối */
+  right: 25px; /* Cách lề phải 25px */
+  top: 0; /* Cách lề trên 0px */
+  color: #000; /* Màu đen */
+  font-size: 35px; /* Cỡ chữ lớn 35px */
+  font-weight: bold; /* Chữ đậm */
+}
+
+.close:hover,
+.close:focus {
+  color: red; /* Khi di chuột hoặc focus, màu đổi thành đỏ */
+  cursor: pointer; /* Con trỏ chuột biến thành hình tay */
+}
+
+/* Add Zoom Animation */
+/* Thêm hiệu ứng phóng to */
+.animate {
+  -webkit-animation: animatezoom 0.6s; /* Thêm hiệu ứng phóng to 0.6 giây cho các trình duyệt WebKit */
+  animation: animatezoom 0.6s; /* Thêm hiệu ứng phóng to 0.6 giây */
+}
+
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+
+
+<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+<script>
+
+var modal = document.getElementById('id01');
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
